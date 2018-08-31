@@ -31,6 +31,9 @@ source: .
 destination: ./_site
 permalink: /:title
 
+categories:
+  path: /category/
+
 # Default values
 defaults:
   -
@@ -39,6 +42,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
   -
     scope:
       path: ""
