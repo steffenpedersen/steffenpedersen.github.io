@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<section class="o-category">
+
+	<h2 class="o-category__title">Category: {{ page.category }}</h2>
+
+		{% for post in site.categories[page.category] %}
+			<article class="c-excerpt">
+				<h2 class="c-excerpt__heading">
+					<a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">
+						{%if post.header %}
+							{{ post.header }}
+						{% else %}
+							{{ post.title }}
+						{% endif %}
+					</a>
+				</h2>
+
+				{% include byline-post.html %}
+
+				<p class="c-excerpt__content">
+					{{ post.content | strip_html | truncatewords:25 }}
+				</p>
+			</article>
+		{% endfor %}
+
+</section>

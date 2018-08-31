@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<article class="o-article">
+	<h2 class="o-article__title">{%if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h2>
+	
+	{% include byline-page.html %}
+
+	<div>
+
+		{{ content }}
+
+	</div>
+</article>

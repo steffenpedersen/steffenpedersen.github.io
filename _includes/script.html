@@ -1,0 +1,4 @@
+{% capture scripts %}
+  {% include main.js %}
+{% endcapture %}
+<script>{{ scripts | uglify | strip }}</script>

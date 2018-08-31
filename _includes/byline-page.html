@@ -1,0 +1,22 @@
+<div class="c-byline">
+	{%if page.category %}
+	<span class="c-byline__dot--right">
+		<a href="/category/{{ page.category }}">{{ page.category }}</a>
+	</span>
+	{% endif %}
+	<time datetime="{{ post.date | date_to_xmlschema }}">
+		{{ page.date | date_to_string }}
+	</time>
+	{%if page.modified %}
+	<span class="c-byline__dot--left">
+		<time datetime="{{ post.modified | date_to_xmlschema }}">
+			{{ page.modified | date_to_string }}
+		</time>
+	</span>
+	{% endif %}
+	{%if page.language %}
+	<span class="c-byline__dot--left">
+		<span class="c-byline__lang c-byline__lang--{{ page.language }}"></span>
+	</span>
+	{% endif %}
+</div>

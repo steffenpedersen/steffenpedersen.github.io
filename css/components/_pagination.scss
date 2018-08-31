@@ -1,0 +1,21 @@
+
+.c-pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__item {
+		padding: 0.5em;
+		font-size: $font-size-md;
+		font-weight: 700;
+	}
+
+	a {
+		text-decoration: none;
+		color: $color-grey;
+
+		&:hover {
+			color: $color-yellow;
+		}
+	}
+}

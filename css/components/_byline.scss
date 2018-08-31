@@ -1,0 +1,40 @@
+.c-byline {
+	margin: 1em 0;
+	color: $color-grey;
+
+	&__dot {
+		&--left {
+			&:before {
+				content: ' ◦';
+				margin: 0 .5em;
+			}
+		}
+
+		&--right {
+			&:after {
+				content: ' ◦';
+				margin: 0 .5em;
+			}
+		}
+	}
+
+	&__lang {
+			height: 1em;
+			width: 1.33em;
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: inline-block;
+
+		&--dk {
+			background-image: url("/img/lang/dk.svg");
+		}
+
+		&--uk {
+			background-image: url("/img/lang/uk.svg");
+		}
+	}
+
+	@media print {
+		page-break-inside: avoid;
+	}
+}
