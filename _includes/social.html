@@ -1,4 +1,5 @@
 <div class="u-text-align-center u-gutter-top u-gutter-bottom">
-	<a href="{{ site.linkedin }}" class="c-icon c-icon__linkedin"></a>
-	<a href="{{ site.medium }}" class="c-icon c-icon__medium"></a>
+	{% for item in site.data.settings.social %}
+		<a href="{{ item.url }}" class="c-icon c-icon__{{ item.icon }}"></a>
+	{% endfor %}
 </div>

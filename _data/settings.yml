@@ -1,0 +1,12 @@
+#-------------------------------
+# General Site Settings
+
+menu:
+- title: Blog
+  url: blog
+
+social:
+- url: https://www.linkedin.com/in/mrsteffenpedersen/
+  icon: linkedin
+- url:  https://medium.com/@steffen.pedersen
+  icon: medium
