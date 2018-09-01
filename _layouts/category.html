@@ -4,7 +4,9 @@ layout: default
 
 <section class="o-category">
 
-	<h2 class="o-category__title">Category: {{ page.category }}</h2>
+	<h2 class="o-category__title">Category:
+		<span class="u-weight-regular">{{ page.category }}</span>
+	</h2>
 
 		{% for post in site.categories[page.category] %}
 			<article class="c-excerpt">

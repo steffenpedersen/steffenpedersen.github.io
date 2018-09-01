@@ -4,6 +4,7 @@ title: Blog
 ---
 
 {% for post in paginator.posts %}
+{% unless post.display contains 'never' %}
 
 <article class="c-excerpt">
 	<h2 class="c-excerpt__heading">
@@ -30,4 +31,5 @@ title: Blog
 	</p>
 </article>
 
+{% endunless %}
 {% endfor %}
