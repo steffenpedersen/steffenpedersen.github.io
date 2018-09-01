@@ -7,7 +7,14 @@ title: Blog
 
 <article class="c-excerpt">
 	<h2 class="c-excerpt__heading">
-		<a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">
+		<a href="
+		{% if post.blogurl %}
+			{{ post.blogurl }}
+		{% elsif site.baseurl == "/" %}
+			{{ post.url }}
+		{% else %}
+			{{ post.url | prepend: site.baseurl }}
+		{% endif %}">
 			{%if post.header %}
 				{{ post.header }}
 			{% else %}
