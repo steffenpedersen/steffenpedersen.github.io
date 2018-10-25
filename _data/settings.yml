@@ -6,6 +6,8 @@ menu:
   url: blog
 
 social:
+- url:  https://github.com/steffenpedersen
+  icon: github
 - url: https://www.linkedin.com/in/mrsteffenpedersen/
   icon: linkedin
 - url:  https://medium.com/@steffen.pedersen
