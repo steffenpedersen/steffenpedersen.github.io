@@ -14,9 +14,12 @@
 		</time>
 	</span>
 	{% endif %}
-	{%if post.language %}
-	<span class="c-byline__dot--left">
-		<span class="c-byline__lang c-byline__lang--{{ post.language }}"></span>
-	</span>
-	{% endif %}
+
+	{% comment %}
+		{%if post.language %}
+		<span class="c-byline__dot--left">
+			<span class="c-byline__lang c-byline__lang--{{ post.language }}"></span>
+		</span>
+		{% endif %}
+	{% endcomment %}
 </div>
