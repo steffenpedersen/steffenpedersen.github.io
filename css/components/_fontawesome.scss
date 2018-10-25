@@ -5,6 +5,10 @@
 	font-size: $font-size-lg;
 	margin-right: .5em;
 
+	&:hover {
+		text-decoration: none;
+	}
+
 	&__linkedin {
 		&:before {
 			content: "\f0e1";
