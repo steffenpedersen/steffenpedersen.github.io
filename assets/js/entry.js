@@ -9,9 +9,15 @@ request.open('GET', 'https://api.github.com/users/steffenpedersen/repos?sort=upd
 request.onload = function () {
 
     var data = JSON.parse(this.response);
+
     if (request.status >= 200 && request.status < 400) {
+        // Filter out repositories
+        data = data.filter((a) => {
+            return  a.name !== 'stay-healthy' &&
+                    a.name !== 'coding-music';
+        });
+
         data.forEach(function (rep) {
-            // TODO: Filter out selected repositories
 
             var card = document.createElement('div');
             card.setAttribute('class', 'c-open-source__item');
