@@ -50,7 +50,7 @@ plugins:
   - uglifier
 
 sass:
-  sass_dir: css
+  sass_dir: assets/css
   style: :compressed
 
 js:
