@@ -10,6 +10,7 @@ request.onload = function () {
     const data = JSON.parse(this.response);
 
     if (request.status >= 200 && request.status < 400) {
+
         // Filter out repositories
         data = data.filter((a) => {
             return  a.name !== 'stay-healthy' &&
@@ -17,7 +18,6 @@ request.onload = function () {
         });
 
         data.forEach(function (rep) {
-
             const card = document.createElement('div');
             card.setAttribute('class', 'c-open-source__item');
 
