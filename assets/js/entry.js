@@ -22,14 +22,19 @@ request.onload = function () {
             var p = document.createElement('p');
             p.textContent = rep.description;
 
-            container.appendChild(card);
-            card.appendChild(h3);
-            card.appendChild(p);
+            if(container && card) {
+                container.appendChild(card);
+                card.appendChild(h3);
+                card.appendChild(p);
+            }
         });
     } else {
         var errorMessage = document.createElement('marquee');
         errorMessage.textContent = "Gah, it's not working!";
-        container.appendChild(errorMessage);
+
+        if(container) {
+            container.appendChild(errorMessage);
+        }
     }
 }
 
