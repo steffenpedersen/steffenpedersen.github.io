@@ -7,7 +7,7 @@ request.open('GET', 'https://api.github.com/users/steffenpedersen/repos?sort=upd
 
 request.onload = function () {
 
-    const data = JSON.parse(this.response);
+    let data = JSON.parse(this.response);
 
     if (request.status >= 200 && request.status < 400) {
 
