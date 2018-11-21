@@ -1,0 +1,30 @@
+// =============================================================================
+// PAGE
+// =============================================================================
+
+html {
+	color: $color-black;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+@media print {
+	body,
+	html {
+		height: auto;
+	}
+}
+
+hr {
+	display: block;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	margin-left: 35%;
+	margin-right: 35%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: $color-light-grey;
+}

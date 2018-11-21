@@ -1,0 +1,31 @@
+// =============================================================================
+// LAYOUT
+// =============================================================================
+
+.o-page {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.o-article {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	&__title {
+		font-size: $font-size-xxl;
+		font-weight: 700;
+	}
+}
+
+.o-category {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	&__title {
+		color: $color-white;
+		background-color: $color-black;
+		font-size: $font-size-xxl;
+		font-weight: 700;
+		padding: .5em;
+	}
+}

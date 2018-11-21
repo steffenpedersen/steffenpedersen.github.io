@@ -1,0 +1,13 @@
+.c-menu {
+	color: $color-black;
+	font-weight: 700;
+
+	&:not(:first-of-type) {
+		margin-left: 1em;
+	}
+
+	&:hover {
+		color: $color-yellow;
+		text-decoration: none;
+	}
+}

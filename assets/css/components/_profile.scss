@@ -1,0 +1,17 @@
+$profile: (
+	'sm': 20px,
+	'lg': 75px,
+) !default;
+
+@each $property, $value in $profile {
+	.c-profile-#{$property} {
+		height: $value;
+		width: $value;
+		border-radius: 50%;
+		background-image: url("/img/me.jpg");
+		background-size: cover;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		display: inline-block;
+	}
+}

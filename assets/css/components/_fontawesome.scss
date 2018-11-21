@@ -1,0 +1,35 @@
+.c-icon {
+	position: relative;
+	font-family: 'Font Awesome 5 Brands';
+	color: $color-black;
+	font-size: $font-size-lg;
+	margin-right: .5em;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&__linkedin {
+		&:before {
+			content: "\f0e1";
+		}
+	}
+
+	&__medium {
+		&:before {
+			content: "\f3c7";
+		}
+	}
+
+	&__instagram {
+		&:before {
+			content: "\f16d";
+		}
+	}
+
+	&__github {
+		&:before {
+			content: "\f09b";
+		}
+	}
+}

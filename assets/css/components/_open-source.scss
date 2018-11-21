@@ -1,0 +1,17 @@
+// TODO: Rewrite to best practices
+
+.c-open-source {
+
+  &__item {
+    padding: 1em;
+    margin: 1em 0;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
