@@ -1,14 +1,13 @@
-// TODO: This should be written into ES2015
-
-var container = document.querySelector('.c-open-source');
-
 // TODO: Add comments
 
-var request = new XMLHttpRequest();
+const container = document.querySelector('.c-open-source');
+const request = new XMLHttpRequest();
+
 request.open('GET', 'https://api.github.com/users/steffenpedersen/repos?sort=updated', true);
+
 request.onload = function () {
 
-    var data = JSON.parse(this.response);
+    const data = JSON.parse(this.response);
 
     if (request.status >= 200 && request.status < 400) {
         // Filter out repositories
@@ -19,13 +18,13 @@ request.onload = function () {
 
         data.forEach(function (rep) {
 
-            var card = document.createElement('div');
+            const card = document.createElement('div');
             card.setAttribute('class', 'c-open-source__item');
 
-            var h3 = document.createElement('h3');
+            const h3 = document.createElement('h3');
             h3.textContent = rep.name;
 
-            var p = document.createElement('p');
+            const p = document.createElement('p');
             p.textContent = rep.description;
 
             if(container && card) {
@@ -35,7 +34,7 @@ request.onload = function () {
             }
         });
     } else {
-        var errorMessage = document.createElement('marquee');
+        const errorMessage = document.createElement('marquee');
         errorMessage.textContent = "Gah, it's not working!";
 
         if(container) {
