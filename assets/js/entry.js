@@ -13,8 +13,8 @@ request.onload = function () {
 
         // Filter out repositories
         data = data.filter((a) => {
-            return  a.name !== 'stay-healthy' &&
-                    a.name !== 'coding-music';
+            return  a.name.includes('steffenpedersen.github.io') ||
+                    a.name.includes('coding-music');
         });
 
         data.forEach(function (rep) {
