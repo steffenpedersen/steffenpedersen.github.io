@@ -11,10 +11,17 @@ request.onload = function () {
 
     if (request.status >= 200 && request.status < 400) {
 
+        const repositories = [
+            "coding-music",
+            "dotfiles",
+            "stay-healthy",
+            "steffenpedersen.github.io",
+            "svg-to-sass-variables"
+        ];
+
         // Filter out repositories
         data = data.filter((a) => {
-            return  a.name.includes('steffenpedersen.github.io') ||
-                    a.name.includes('coding-music');
+            return repositories.includes(a.name);
         });
 
         data.forEach(function (rep) {
@@ -27,7 +34,7 @@ request.onload = function () {
             const p = document.createElement('p');
             p.textContent = rep.description;
 
-            if(container && card) {
+            if (container && card) {
                 container.appendChild(card);
                 card.appendChild(h3);
                 card.appendChild(p);
