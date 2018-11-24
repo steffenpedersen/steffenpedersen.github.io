@@ -20,20 +20,20 @@ function make(element , api, ...repositories) {
             });
 
             data.forEach(function (rep) {
-                const card = document.createElement('div');
+                const card = document.createElement('a');
                 card.setAttribute('class', 'c-open-source__item');
+                card.setAttribute('href', rep.html_url)
 
-                const a = document.createElement('a');
-                a.textContent = rep.name;
-                a.setAttribute('href', rep.html_url)
+                const heading = document.createElement('h3');
+                heading.textContent = rep.name;
 
-                const p = document.createElement('p');
-                p.textContent = rep.description;
+                const text = document.createElement('p');
+                text.textContent = rep.description;
 
                 if (container && card) {
                     container.appendChild(card);
-                    card.appendChild(a);
-                    card.appendChild(p);
+                    card.appendChild(heading);
+                    card.appendChild(text);
                 }
             });
         } else {

@@ -3,10 +3,24 @@
 .c-open-source {
 
   &__item {
+    display: block;
     padding: 1em;
     margin: 1em 0;
+    border-bottom: 1px solid $color-grey;
 
-    a {
+    $root: &;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+
+      h3 {
+        text-decoration: underline;
+      }
+    }
+
+    h3 {
+      font-weight: 700;
       margin-top: 0;
     }
 
