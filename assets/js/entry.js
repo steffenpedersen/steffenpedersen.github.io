@@ -24,7 +24,7 @@ function make(element , api, ...repositories) {
                 card.setAttribute('class', 'c-open-source__item');
                 card.setAttribute('href', rep.html_url)
 
-                const heading = document.createElement('h3');
+                const heading = document.createElement('h4');
                 heading.textContent = rep.name;
 
                 const text = document.createElement('p');
