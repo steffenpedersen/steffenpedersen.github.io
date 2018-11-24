@@ -1,53 +1,64 @@
 // TODO: Add comments
 
-const container = document.querySelector('.c-open-source');
-const request = new XMLHttpRequest();
+function make(element , api, ...repositories) {
+    // TODO: Please make it prettier at some point
 
-request.open('GET', 'https://api.github.com/users/steffenpedersen/repos?sort=updated', true);
+    const container = document.querySelector(element);
+    const request = new XMLHttpRequest();
 
-request.onload = function () {
+    request.open('GET', api, true);
 
-    let data = JSON.parse(this.response);
+    request.onload = function () {
 
-    if (request.status >= 200 && request.status < 400) {
+        let data = JSON.parse(this.response);
 
-        const repositories = [
-            "coding-music",
-            "dotfiles",
-            "stay-healthy",
-            "steffenpedersen.github.io",
-            "svg-to-sass-variables"
-        ];
+        if (request.status >= 200 && request.status < 400) {
 
-        // Filter out repositories
-        data = data.filter((a) => {
-            return repositories.includes(a.name);
-        });
+            // Filter out repositories
+            data = data.filter((a) => {
+                return repositories.includes(a.name);
+            });
 
-        data.forEach(function (rep) {
-            const card = document.createElement('div');
-            card.setAttribute('class', 'c-open-source__item');
+            data.forEach(function (rep) {
+                const card = document.createElement('div');
+                card.setAttribute('class', 'c-open-source__item');
 
-            const h3 = document.createElement('h3');
-            h3.textContent = rep.name;
+                const a = document.createElement('a');
+                a.textContent = rep.name;
+                a.setAttribute('href', rep.html_url)
 
-            const p = document.createElement('p');
-            p.textContent = rep.description;
+                const p = document.createElement('p');
+                p.textContent = rep.description;
 
-            if (container && card) {
-                container.appendChild(card);
-                card.appendChild(h3);
-                card.appendChild(p);
+                if (container && card) {
+                    container.appendChild(card);
+                    card.appendChild(a);
+                    card.appendChild(p);
+                }
+            });
+        } else {
+            const errorMessage = document.createElement('span');
+            errorMessage.textContent = "It's not working!";
+
+            if (container) {
+                container.appendChild(errorMessage);
             }
-        });
-    } else {
-        const errorMessage = document.createElement('marquee');
-        errorMessage.textContent = "Gah, it's not working!";
-
-        if(container) {
-            container.appendChild(errorMessage);
         }
     }
+
+    request.send();
 }
 
-request.send();
+make('[data-steffenpedersen]',
+    'https://api.github.com/users/steffenpedersen/repos?sort=updated',
+    'coding-music',
+    'dotfiles',
+    'stay-healthy',
+    'steffenpedersen.github.io',
+    'svg-to-sass-variables');
+
+make('[data-bleptek]',
+    'https://api.github.com/orgs/bleptek/repos',
+    'basic-slides',
+    'bemit-boilerplate',
+    'granny-grid');
