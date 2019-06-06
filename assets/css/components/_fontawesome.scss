@@ -32,4 +32,16 @@
 			content: "\f09b";
 		}
 	}
+
+	&__dev {
+		&:before {
+			content: "\f6cc";
+		}
+	}
+
+	&__twitter {
+		&:before {
+			content: "\f099";
+		}
+	}
 }
