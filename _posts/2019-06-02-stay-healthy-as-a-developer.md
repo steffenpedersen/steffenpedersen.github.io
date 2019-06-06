@@ -1,5 +1,5 @@
 ---
-title: My Most Used Git Commands
+title: Stay Healthy as a Developer
 blogurl: https://dev.to/steffenpedersen/stay-healthy-as-a-developer-526c
 ---
 
